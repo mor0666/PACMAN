@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./jquery-3.4.1.slim.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	</head>
+	<title> Cake Eating Pacman </title>
+	<link rel = "icon" href = "images/TabIcon.jpg" type = "image/x-icon">
+	<style>
+		body {
+			background: url(images/background.jpg) no-repeat center center fixed;
+			background-size: 100% 100%
+		}
+	
+	</style>
+	<!------------------- menu ------------------->
+	<header class = "Menu">
+		<label id="name">Cake Eating<br> Pacman</label>
+		<img id="logo" src="images/TabIcon.jpg" height="150" width="150">
+		<div id="welcomeUser" style="color: white;"> Welcome, guest!</div>
+		<a id="Home" onclick="show_welcome_page()">Home</a>
+		<a id="Login" onclick="show_login_page()">Login</a>
+		<a id="Register" onclick="show_register_page()">Register</a>
+		<a id="Settings" onclick="show_settings_page()">Settings</a>
+		<a id="About" onclick="AboutModal()">About</a>
+		<div id="names" style="float: right; color: white; font-family: Sofia, sans-serif; "> Mor Levi & Meital Glick </div>
+		
+	</header>
+	
+	<body>
+
+		<div class= "page" id = "welcome_page"> 
+			<button class = "welcome_button" type="button" onclick="show_register_page()" style="width:200px; height: 90px;"> Register </button>
+			<button class = "welcome_button" type="button" onclick="show_login_page()" style="width:200px; height: 90px;" > Log In </button>
+		</div>
+
+
+												<!------ LOGIN PAGE ------>
+
+		<div class= "container" id = "login_page"> 
+			<form class = "form" action="#" onsubmit="return false;">  
+				<div class="title">Login</div>
+				<div class="input-box underline">
+				  <input id="username" type="text" placeholder="Enter Your username" required>
+				  <div class="underline"></div>
+				  <i style="font-size:18px; color:rgb(234, 39, 169);">Username</i> <br>
+				</div>
+				<div class="input-box">
+				  <input id="password" type="password" placeholder="Enter Your Password" required>
+				  <div class="underline"></div>
+				  <i style="font-size:18px; color:rgb(234, 39, 169);">Password</i> <br>
+				</div>
+				<div class="input-box button">
+				  <input type="submit" name="" value="Continue" onclick="CheckUser()">
+				</div>
+
+			  </form>
+			</form> 			
+		</div>
+
+
+<br>
+<br>
+
+												<!------ REGISTER PAGE ------>
+
+	<div class= "container container_tall" id = "register_page"> 
+		<form class = "form" action="#" onsubmit="return false;">  
+
+			<div class="title">Registration</div>
+			<div class="input-box underline">
+				<input id="username_r" type="text" placeholder="Enter Your username" required>
+				<div class="underline"></div>
+				<i style="font-size:18px; color:rgb(234, 39, 169);">Username</i> <br>
+			</div>
+			<div class="input-box">
+				<input id="password_r" type="password" placeholder="Enter Your Password" required>
+				<div class="underline"></div>
+				<i style="font-size:18px; color:rgb(234, 39, 169);">Password</i> <br>
+			</div>
+			<div class="input-box">
+				<input id="fullname_r" type="text" placeholder="Enter Your Full Name" required>
+				<div class="underline"></div>
+				<i style="font-size:18px; color:rgb(234, 39, 169);">Full Name</i> <br>
+			</div>
+			<div class="input-box">
+				<input id="email_r" type="email" placeholder="Enter Your Email" required>
+				<div class="underline"></div>
+				<i style="font-size:18px; color:rgb(234, 39, 169);">Email</i> <br>
+			</div>
+			<div class="input-box">
+				<input id="birthdate_r" type="date" placeholder="Enter Your Birthdate" required>
+				<div class="underline"></div>
+				<i style="font-size:18px; color:rgb(234, 39, 169);">Birth Date</i> <br>
+			</div>
+			<div class="input-box button">
+				<input type="submit" name="" value="Continue" onclick="RegisterUser()">
+			</div>
+
+			</form>
+		</form> 			
+	</div>
+
+
+													<!------ SETTINGS PAGE ------>
+
+	<div class= "container container_tall_plus" id = "settings_page"> 
+		<form class = "form" action="#" onsubmit="return false;">  
+
+			<div class="title">Settings</div>
+<!-- 
+			<div class="input-box underline">
+				<input id="random_btn" type="checkbox" placeholder="Random keys and settings">
+				<div class="underline"></div>
+			</div> -->
+			<br>
+			<i style="font-size:18px; color:rgb(146, 39, 234);">Choose keboard keys according <br> to the sign direction: </i>
+			<div class="input-box underline">
+				<input id="right_key" type = "button" placeholder="Enter key right" required onkeydown="SetKeyCode(event, 'RIGHT')"> 
+				<i class="arrow right"></i>
+				<div class="underline"></div>
+			</div>
+			<br>
+
+		
+			<div class="input-box">
+				<input id="left_key" type = "button" placeholder="Enter key left" required onkeydown="SetKeyCode(event, 'LEFT')" >
+				<i class="arrow left"></i>
+				<div class="underline"></div>
+			</div>
+			<br>
+
+			<div class="input-box">
+				<input id="up_key" type = "button" placeholder="Enter key up" required onkeydown="SetKeyCode(event, 'UP')">
+				<i class="arrow up"></i>
+				<div class="underline"></div>
+			</div>
+			<br>
+
+			<div class="input-box">
+				<input id="down_key" type = "button" placeholder="Enter key down" required onkeydown="SetKeyCode(event, 'DOWN')">
+				<i class="arrow down"></i>
+				<div class="underline"></div>
+			</div>
+			<br>
+			
+			
+			
+			<i style="font-size:18px; color:rgb(146, 39, 234);">Pick color for 5 points ball : </i> 
+			<input type="color" value="#fb473" id="ball5_color" /><br>
+			<i style="font-size:18px; color:rgb(146, 39, 234);">Pick color for 15 points ball : </i> 
+			<input type="color" value="#951491" id="ball15_color" /><br>
+			<i style="font-size:18px; color:rgb(146, 39, 234);">Pick color for 25 points ball : </i> 
+			<input type="color" value="#2df0f8" id="ball25_color" /><br>
+
+
+
+			<div class="input-box">
+				<input id="balls_num" type="number" placeholder="Enter number of balls in the game (50-90)" required>
+				<i style="font-size:18px; color:rgb(234, 39, 169);">Balls Number</i> <br>
+				<div class="underline"></div>
+			</div>
+			
+			<div class="input-box">
+				<input id="time_num" type="number" placeholder="Enter maximum game time (minimum 60 seconds)" required>
+				<i style="font-size:18px; color:rgb(234, 39, 169);">Start Time</i> <br>
+				<div class="underline"></div>
+			</div>
+						
+			<div class="input-box">
+				<input id="monsters_num" type="number" placeholder="Enter amount of monsters (1-4)" required>
+				<i style="font-size:18px; color:rgb(234, 39, 169);" >Monsters Number</i> <br>
+				<div class="underline"></div>
+			</div>
+
+			<div class="input-box button">
+				<input id= "settings_random_btn" type="submit" name="" value="Random" onclick="Random()" style="background: linear-gradient(to right, #04849b 0%, #5ee9ee 100%);" >
+			</div>
+
+			<div class="input-box button">
+				<input id= "settings_continue_btn" type="submit" name="" value="Start Game!" onclick="Check_Settings()">
+			</div>
+
+			</form>
+		</form> 			
+	</div>
+												<!------ ABOUT MODAL ------>
+	<div class="about" id="modal_about" role="dialog">
+		<div class="about_content">
+			<span id="spanClose">&times;</span>
+			<h2>Mor Levi & Meital Glick's Eating Cake Pacman! </h2><br>
+			<a>jQuery used: register form and settings requirements with regex.</a><br>
+			<a>We have used designed templates of forms for better UI/UX and uniformity.</a><br>
+			<a>The difficulties we struggled with were the moving entities and the collision with the Pacman. We also had lots of designing issues.</a><br>
+			<img id="dounut" src="images/Donut.png">
+		</div>
+	</div>
+
+												<!------ GAME PAGE ------>
+		<br>
+		<div id="game_page">
+			<table>
+				<td>
+					<canvas id="canvas" height="750" width="750"></canvas>
+				</td>
+				<td>
+					<div id="LabelsButtonDiv">
+						<img id="newGameButton" src="images/button.png" onclick="show_settings_page()"/>
+						<br><br>
+						<div id="score_time">
+							<div  id="score">
+								<label class = "game_field" for="lblScore">Score:</label>
+								<input class = "game_data" id="lblScore" type="text" />
+							</div>
+							<br>
+							<div  id="time">
+								<label class = "game_field" for="lblTime">Time:</label>
+								<input class = "game_data" id="lblTime" type="text" />
+							</div>
+							<br>
+							<div  id="lives">
+								<label class = "game_field" for="lblLives">Lives:</label>
+								<input class = "game_data" id="lblLives" type="text" />
+							</div>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div id="gamesettings">
+						<table id="settingstable">
+							<tr>
+								<td colspan="2"><label class="displaysettings">&nbsp;Up Key: <label id="KeyUpDisplay"  aria-readonly="true"></label>&nbsp;</label></td>
+								<td colspan="2"><label class="displaysettings">&nbsp;Down Key: <label id="KeyDownDisplay" aria-readonly="true"></label>&nbsp;</label></td>
+							</tr>
+							<tr>
+								<td colspan="2"><label class="displaysettings">&nbsp;Left Key: <label id="KeyLeftDisplay" aria-readonly="true"></label>&nbsp;</label></td>
+								<td colspan="2"><label class="displaysettings">&nbsp;Right Key: <label id="KeyRightDisplay" aria-readonly="true"></label>&nbsp;</label></td>
+							</tr>
+							<tr>
+								<td colspan="3"><label class="displaysettings">&nbsp;Number of balls: <label id="ballsNum" aria-readonly="true"></label>&nbsp;</label></td>
+							</tr>
+							<tr>
+								<td colspan="3"><label class="displaysettings">&nbsp;Number of monsters: <label id="monstersNum" aria-readonly="true"></label>&nbsp;</label></td>
+							</tr>
+							<tr>
+								<td colspan="3"><label class="displaysettings">&nbsp;Total game time: <label id="gametime" aria-readonly="true"></label>&nbsp;</label></td>
+							</tr>
+							<tr><td><label class="displaysettings">&nbsp;Balls' Colors:&nbsp;</label></td></tr>
+							<tr><td><label id="color5" class="PointsDisplay">&nbsp;5 Points&nbsp;</label></td></tr>
+							<tr><td><label id="color15" class="PointsDisplay">&nbsp;15 Points&nbsp;</label></td></tr>
+							<tr><td><label id="color25" class="PointsDisplay">&nbsp;25 Points&nbsp;</label></td></tr>
+						</table>
+						<br>
+					</div>
+				</td>
+			</table>
+			<br>
+		</div>
+		
+		
+
+		<!------------------- footer ------------------->
+		<footer style="text-align: center; color: white;">
+			<p style="display:inline;">Contact Us:</p>
+			<a class="text-uppercase" style="margin-left: 30px;">Mor Levi</a>
+			<!-- <a href="https://www.facebook.com/mor.levi.3766/"> -->
+			<a href="mailto:Morlevi0666@gmail.com" style="text-decoration:none">
+				<img id="gmail-logo" src="images/Gmail.png" width="30px" height="30px">
+			</a>
+			<a class="text-uppercase" style="margin-left: 30px">Meital Glick </a>
+			<a href="mailto:meitalgl@post.bgu.ac.il">
+				<img id="gmail-logo" src="images/Gmail.png" width="30px" height="30px">
+			</a>
+			<img id="cake2" src="images/ICON.png" style="float: right;">
+			<img id="cake3" src="images/ICON.png" style="float: left;">
+		</footer>
+		<script type="text/javascript" src="./app.js"></script>
+	</body>
+</html>

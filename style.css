@@ -1,0 +1,416 @@
+.welcome_button{
+    
+    width: 20%;
+    height:15%;
+    border-radius: 15px;
+    background:rgb(207, 237, 245);
+    padding: 520px 20px,20px,20px;
+    font-size: 40px;
+    font-family: "Sofia", sans-serif;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    /* flex-direction: column; */
+    margin-top: 15%;
+    margin-left: 60px;
+   
+}
+
+.page{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.page2{
+    position: relative;
+    align-items: center;
+    justify-content:center;
+    margin-left: 40%;
+}
+
+.form{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    align-items: center;
+    justify-content:center;
+}
+
+.form_field{
+    border-style:dashed;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+ html, body{
+  /* display: grid; */
+  height: 100vh;
+  width: 100%;
+  /* place-items: center; */
+} 
+::selection{
+  background: #ff80bf;
+
+}
+.container{
+  background: #fff;
+  /* max-width: 432px; */
+  width: 300px;
+  height: 320px;
+  
+  /* justify-content: space-between; */
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+  /* margin: 50px 20px 20px 450px; */
+  margin-left: 40%;
+  margin-top: 10%;
+  padding-left: 40px;
+  align-items: center;
+  size: 300px;
+  
+    
+}
+
+.container_tall{
+    background: #fff;
+    /* max-width: 432px; */
+    width: 320px;
+    height: 600px;
+    /* justify-content: space-between; */
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    /* margin: 50px 20px 20px 450px; */
+    margin-top: 5px;
+    padding-left: 50px;
+    align-items: center;
+    
+      
+  }
+
+  .container_tall_plus{
+    background: #fff;
+    /* max-width: 432px; */
+    width: 400px;
+    height: 1100px;
+    /* justify-content: space-between; */
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    /* margin: 50px 20px 20px 450px; */
+    margin-top: 5px;
+    padding-left: 20px;
+    align-items: center;
+    
+      
+  }
+.container form .title{
+  font-size: 30px;
+  font-weight: 600;
+  /* margin: 10px 0 10px 0; */
+  position:relative;
+}
+.container form .title:before{
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 36px;
+  left: 0px;
+  bottom: 3px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+}
+.container form .input-box{
+  width: 100%;
+  height: 45px;
+  margin-top: 25px;
+  position: relative;
+}
+.container form .input-box input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 16px;
+  border: none;
+}
+.container form .underline::before{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #ccc;
+  left: 0;
+  bottom: 0;
+}
+.container form .underline::after{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.3s ease;
+}
+.container form .input-box input:focus ~ .underline::after,
+.container form .input-box input:valid ~ .underline::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.container form .button{
+  margin: 40px 0 20px 0;
+}
+.container .input-box input[type="submit"]{
+  background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+  font-size: 17px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.container .input-box input[type="submit"]:hover{
+  letter-spacing: 1px;
+  background: linear-gradient(to left, #99004d 0%, #ff0080 100%);
+}
+.container .option{
+  font-size: 14px;
+  text-align: center;
+}
+
+
+.side_title{
+    font-size: 15px;
+    font-weight: 540;
+    width: 50%;
+    height: 20px;
+    padding: left 20px;;
+    border-radius: 5px;
+    color: rgb(120, 199, 219);
+    background: linear-gradient(to right, #055a69 0%, #0baae9 100%);
+  }
+
+.Menu{
+    background-color: #5a40ce;
+    font-family: "Sofia", sans-serif;
+}
+
+#name{
+  font-family: "Sofia", sans-serif;
+  color: white;
+  font-size: 150%;
+}
+
+header {
+    width: 100%;
+    height:80px;
+    /* margin-top: -100px; */
+    /* padding: 30px; */
+    display: flex;
+    /* position: sticky; (recomended) */
+    top: 0px;
+    /* position: fixed;  */
+    justify-content: space-around;
+    text-align: center;
+    background: #5a40ce;
+    font-family: "Sofia", sans-serif;
+   
+}
+
+header a{
+    font-family: "Sofia", sans-serif;
+    transition: 0.3s ease;
+    background: #5a40ce;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    border-top: 4px solid #5a40ce;
+    border-bottom: 4px solid #5a40ce;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* margin: 20px; */
+    
+}
+header a:hover {
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    padding: 6px 0;
+}
+#welcomeUser{
+    float: left;
+    padding-left:20px;
+    font-size: 150%;
+    font-family: "Sofia", sans-serif;
+}
+#logo{
+    float: left;
+    height:80px;
+    margin-left: 1%;
+    
+}
+footer {
+    
+    width: 100%;
+    font-family: Calibri;
+    background-color: #5a40ce;
+    height: 50px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+   
+  }
+/* ===== ABOUT MODAL ==== */
+/* inspired by https://www.w3schools.com/howto/howto_css_modals.asp */
+
+.about{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.about_content {
+  background-color: white;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+#spanClose{
+  color: grey;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#spanClose:hover,
+#spanClose:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ===== GAME STYLE ==== */
+
+  /* #canvas{
+    width: 800px;
+    height: 800px;
+  } */
+
+  .game_field{
+    width: 100px;
+    height:50px;
+    border-radius: 50px;
+    background:rgb(207, 237, 245);
+    /* padding: 520px 20px,20px,20px; */
+    font-size: 30px;
+    font-family: "Sofia", sans-serif;
+    justify-content: center;
+    display:flex;
+    left: 10px;
+    position: relative;
+  }
+
+  .game_data{
+    position: relative;
+    /* left: 10px; */
+    width: 120px;
+  }
+
+  .displaysettings{
+    font-size: 20px;
+    /* font-family: "Sofia", sans-serif; */
+    color: black;
+    background-color: white;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+  }
+
+  .PointsDisplay{
+    font-size: 20px;
+    font-family: "Sofia", sans-serif;
+    background-color: white;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+  }
+
+  #newGameButton{
+    width: 25vh;
+    height: 10vh;
+    cursor: pointer;
+  }
+
+  #newGameButton:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  #LabelsButtonDiv{
+    width: 45vh;
+    height: 32vh;
+    align-items: center;
+    position: relative;
+    left: 20%;
+    margin-bottom: 80%;
+  }
+
+  #gamesettings{
+    width: 45vh;
+    height: 32vh;
+    align-items: center;
+    position: relative;
+    right: 10%;
+    margin-bottom: 80%;
+
+  }
+
+
+
+
+  
+
